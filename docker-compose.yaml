@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+  app:
+    image: node:18
+    volumes:
+      - ./:/app
+    ports:
+      - "${APP_PORT}:3000"
+    working_dir: /app
+    env_file:
+      - .env
+    command: sh -c 
+      "
+       yarn &&
+       yarn start:dev
+      "
+    depends_on:
+      - mysql
+  mysql:
+    image: postgres:14.7
+    env_file:
+      - .env
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "${DB_PORT}:5432"
+  redis:
+    image: redis:6.2.10
