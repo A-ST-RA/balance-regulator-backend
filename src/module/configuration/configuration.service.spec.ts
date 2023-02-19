@@ -29,4 +29,16 @@ describe('ConfigurationService', () => {
 
     expect(isDbPortInteger).toBeTruthy();
   });
+
+  it('should get db name that should to be of type string', () => {
+    const isString = typeof service.getDbName() === 'string';
+
+    expect(isString).toBeTruthy();
+  });
+
+  it('should get db password that should to be a string', () => {
+    const isString = typeof service.getDbPassword() === 'string';
+
+    expect(isString).toBeTruthy();
+  });
 });

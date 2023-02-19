@@ -8,10 +8,10 @@ export class MockConfigurationService implements IConfigurationService {
   }
 
   public getDbPassword(): string {
-    throw new Error('Method not implemented.');
+    return 'some-db-password';
   }
 
   public getDbName(): string {
-    throw new Error('Method not implemented.');
+    return 'some-db-name';
   }
 }
