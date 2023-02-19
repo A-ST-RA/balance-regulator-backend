@@ -2,15 +2,20 @@ import { Test, TestingModule } from '@nestjs/testing';
 import {
   IConfigurationService,
   IConfigurationServiceToken,
-} from './configuration.service.interface';
-import { configurationServiceProvider } from './configuration.service.provider';
+} from './types/configuration.service.interface';
+import { ConfigurationModule } from './configuration.module';
+import { ConfigurationModuleType } from './types/configuration-params.module.interface';
 
 describe('ConfigurationService', () => {
   let service: IConfigurationService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [configurationServiceProvider],
+      imports: [
+        ConfigurationModule.forRoot({
+          type: ConfigurationModuleType.NEST_CONFIG,
+        }),
+      ],
     }).compile();
 
     service = module.get<IConfigurationService>(IConfigurationServiceToken);

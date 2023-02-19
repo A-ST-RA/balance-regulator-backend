@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IConfigurationService } from '../configuration.service.interface';
+import { IConfigurationService } from '../types/configuration.service.interface';
 
 @Injectable()
 export class MockConfigurationService implements IConfigurationService {
