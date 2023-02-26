@@ -7,7 +7,7 @@ import { ConfigurationModule } from './module/configuration/configuration.module
 @Module({
   imports: [
     ConfigurationModule.forRoot({
-      type: ConfigurationModuleType.MOCK_CONFIG,
+      type: ConfigurationModuleType.NEST_CONFIG,
     }),
   ],
   controllers: [AppController],
