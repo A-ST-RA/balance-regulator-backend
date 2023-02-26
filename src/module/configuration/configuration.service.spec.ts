@@ -6,14 +6,16 @@ import {
 import { ConfigurationModule } from './configuration.module';
 import { ConfigurationModuleType } from './types/configuration-params.module.interface';
 
-describe('ConfigurationService', () => {
+const moduleType = ConfigurationModuleType.NEST_CONFIG;
+
+describe(`ConfigurationService: IMPL ${moduleType}`, () => {
   let service: IConfigurationService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [
         ConfigurationModule.forRoot({
-          type: ConfigurationModuleType.NEST_CONFIG,
+          type: moduleType,
         }),
       ],
     }).compile();
