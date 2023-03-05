@@ -9,6 +9,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
+    "commitmsg": "commitlint -E GIT_PARAMS",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -28,6 +29,8 @@
     "rxjs": "^7.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "@nestjs/cli": "^9.0.0",
     "@nestjs/config": "^2.3.1",
     "@nestjs/schematics": "^9.0.0",
