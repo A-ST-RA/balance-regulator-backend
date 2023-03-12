@@ -1,6 +1,6 @@
-# Balance Regulator
+# Nest JS Starter
 
-Yet another balance manager
+Стартер для более эффективной разработке приложений
 
 ## Local deploy
 
